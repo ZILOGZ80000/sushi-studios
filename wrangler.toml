@@ -1,5 +1,8 @@
-name = "sushi-studios"
+name = "your_project_name"
 compatibility_date = "2025-04-09"
 
-[assets]
-directory = "."  # Теперь Wrangler ищет файлы в корне проекта
+[build]
+command = "npm run build"
+[site]
+bucket = "."  
+entry-point = "_worker.js" 
