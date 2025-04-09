@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Уроки Python для начинающих</title>
+<style>
+/* CSS стили из предыдущих ответов (все вместе) */
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color:#fff;
+    
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color:#fff;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color:#fff;
+}
+
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color:#fff;
+}
+
+pre {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color:#fff;
+}
+
+code {
+    font-family: monospace;
+    color:#fff;
+}
+li {color: #fff;
+  
+}
+.lesson-content {
+    margin-bottom: 60px;
+}
+
+/* Скрываем все уроки, кроме первого изначально */
+.lesson-content:not(:fir!st-child) {
+    display: none;
+}
+
+.backbtn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: limegreen;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+         }
+/* Кнопка "Назад" */
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #FFF; 
+    border: 2px solid #32CD32; 
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+  
+#backButton:hover {
+    transform: rotate(360deg);
+    background-color: #00FF00;
+    color: #000000;
+    border-color: #00FF00;
+}
+
+
+/* Панель навигации */
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    border-top: 1px solid #32CD32;
+}
+
+.page-navigation button {
+    background-color: #32CD32;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.page-navigation button:hover {
+    transform: scale(1.05);
+    background-color: #00FF00;
+    color: #000000;
+}
+
+
+.page-navigation span {
+    font-size: 1.1em;
+    margin: 0 15px;
+}
+
+/* Секции ошибок для отступов (и общие секции уроков) */
+.error-section, .prevention-section, .lesson-section {
+    margin-bottom: 30px;
+}
+</style>
+</head>
+<body style="background-color: #000000; color: #32CD32; font-family: Arial, sans-serif;">
+
+  <button class="backbtn" onclick="window.location.href='index.html'">←</button>
+
+  <div class="lesson-content">
+    <h1>✏️ 🐍 Урок 0: Разбор частых ошибок в Python (+ как исправить)</h1>
+
+    <section class="error-section">
+      <h2>📚 1. IndentationError: Проблемы с отступами</h2>
+<pre><code>if True:
+print("Ошибка")  # ❌ Нет отступа после двоеточия</code></pre>
+      <p>Как исправить:</p>
+      <pre><code>✅ Всегда делайте 4 пробела (или таб) после :
+✅ Настройте редактор кода для автоматических отступов
+✅ Проверяйте выравнивание в блоках if/for/def</code></pre>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 2. SyntaxError: Ошибки синтаксиса</h2>
+       <pre><code>if x = 10:  # ❌ = вместо ==
+print("Ошибка")</code></pre>
+      <p>Как исправить:</p>
+      <pre><code>✅ Сравнение: ==, присваивание: =
+✅ Закрывайте все кавычки и скобки: "Hello") → "Hello"
+✅ Проверяйте двоеточия в конце условий: if x == 10:</code></pre>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 3. NameError: Неизвестные переменные</h2>
+      <pre><code>print(age)  # ❌ Переменная не объявлена</code></pre>
+      <p>Как исправить:</p>
+      <pre><code>✅ Объявляйте переменные перед использованием:
+age = 25  # ← Добавить это
+print(age)
+
+✅ Проверяйте регистр: Name ≠ name
+✅ Импортируйте нужные модули</code></pre>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 4. TypeError: Несовместимые типы</h2>
+      <pre><code>num = input("Введите число: ")  # ❌ Возвращает строку
+result = num + 5  # TypeError</code></pre>
+      <p>Как исправить:</p>
+      <pre><code>✅ Преобразуйте типы:
+num = int(input("Введите число: "))  # ← Правильный вариант
+
+✅ Проверяйте типы: type(num)
+✅ Используйте явное преобразование: int(), str(), float()</code></pre>
+
+</section>
+
+    <section class="prevention-section">
+      <h2>✏️ 💡 Профилактика ошибок</h2>
+      <ol>
+        <li>Используйте IDE с подсветкой синтаксиса (PyCharm, VSCode)</li>
+        <li>Читайте сообщения об ошибках — они часто прямо указывают на проблему</li>
+        <li>Печатайте код руками вместо копирования — лучше запоминается синтаксис</li>
+        <li>Разбивайте код на части — тестируйте каждую функцию отдельно</li>
+      </ol>
+      <p>Совет: Ошибки — лучшие учителя! 💪 Каждая исправленная ошибка делает вас сильнее. Попробуйте специально вызвать эти ошибки, чтобы запомнить их "в лицо".</p>
+    </section>
+  </div>
+
+
+  <div class="lesson-content">
+    <h1>✏️ 🐍 Урок 1: print(), input() вкратце переменные</h1>
+
+    <section class="lesson-section">
+      <h3>Комментарии:</h3>
+      <p>#комментарий к коду</p>
+    </section>
+
+    <section class="lesson-section">
+      <h3>1). Принт:</h3>
+      <p>Команда print() выводит текст в консоль в скобках <br>
+      И еще: если в скобках только текст он должен быть в кавчках пример: <code>print("text")</code>, но если надо вывести значение переменной то тогда без кавычек: <code>print(название_переменной)</code><br>
+      А ещё: в принт можно указать несколько параметров: <code>print("значение 1","значение 2", название_переменной)</code></p>
+    </section>
+
+    <section class="lesson-section">
+      <h3>2). Вкратце переменные:</h3>
+      <p>Переменные как бы ящик в который можно сложить что нибудь <br>
+      Переменные создаются
+
+
+так:<br>
+      <code>название_перменной = "текст" </code><br>
+      <code>#или </code><br>
+      <code>название_переменной = 1 #можно просто цифру</code><br>
+      После создания переменная будет как отдельная функция пример: <code>print(название_переменной)</code><br>
+      Частые ошибки:  1. Переменная называться так как какая нибудь команда 2. Название содержит пробел вместо него можно использовать "_" 3. Они чувствительны к регистру то есть  "A" и "a" это разные переменные 4. Начинаться на цифру</p>
+    </section>
+
+    <section class="lesson-section">
+      <h3>3). Инпуты:</h3>
+      <p>Команда <code>input()</code> выводит текст в скобках (там действуют такие же правила как и с принтом) в консоль и после него можно что нибудь написать и оно будет куда-то записываться пример:<br>
+      <code>Название_переменной = input("введите текст")</code> <br>
+      И в переменную <code>название_переменной</code> будет записываться то что мы написали</p>
+    </section>
+
+    <section class="lesson-section">
+      <h3>Пример кода:</h3>
+      <pre><code>MyVar1 = "" #создаем пустую  переменную
+MyVar1 = input("введи параметр 1") # присваивается значение переменной MyVar1 значение через инпут
+print("значение переменной MyVar1:" , MyVar1)</code></pre>
+    </section>
+
+    <section class="lesson-section">
+      <h3>Выводит:</h3>
+      <pre><code>введи параметр 1: привет
+значение переменной MyVar1: привет</code></pre>
+    </section>
+  </div>
+
+
+  <div class="lesson-content">
+    <h1>✏️ 📘 Урок 2:
+
+Типы данных и базовые операции в Python</h1>
+
+    <section class="error-section">
+      <h2>📚 1. Типы данных: что хранится в переменных?</h2>
+      <section class="lesson-section">
+        <h3>⦁ Основные типы:</h3>
+        <ul>
+          <li><code>int</code> — целые числа (пример: <code>age = 15</code>).</li>
+          <li><code>float</code> — числа с плавающей точкой (пример: <code>price = 99.9</code>).</li>
+          <li><code>str</code> — строки (текст в кавычках: <code>name = "Анна"</code>).</li>
+          <li><code>bool</code> — логические значения (<code>True/False</code>).</li>
+        </ul>
+      </section>
+
+      <section class="lesson-section">
+        <h3>⦁ Как проверить тип?</h3>
+        <p>Используйте <code>type()</code>:<br>
+        <pre><code>print(type(10))  # Выведет: &lt;class 'int'&gt;</code></pre></p>
+      </section>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 2. Операции с числами</h2>
+      <section class="lesson-section">
+        <h3>⦁ Арифметика:</h3>
+        <pre><code>a = 10 + 5   # Сложение (15)
+b = 10 - 2.5 # Вычитание (7.5)
+c = 3 * 4    # Умножение (12)
+d = 10 / 3   # Деление (3.333...)
+e = 10 // 3  # Целочисленное деление (3)
+f = 10 % 3   # Остаток от деления (1)
+g = 2 ** 3   # Возведение в степень (8)</code></pre>
+      </section>
+
+      <section class="lesson-section">
+        <h3>⦁ Приоритет операций:</h3>
+        <p>Скобки <code>()</code> &gt; Степень &gt; Умножение/деление <code>* / // %</code> &gt; Сложение/вычитание
+
+
+<code>+ -</code>.</p>
+      </section>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 3. Работа со строками</h2>
+      <section class="lesson-section">
+        <h3>⦁ Конкатенация (сложение строк):</h3>
+        <pre><code>name = "Иван"
+greeting = "Привет, " + name  # Результат: "Привет, Иван"</code></pre>
+      </section>
+
+      <section class="lesson-section">
+        <h3>⦁ Умножение строк:</h3>
+        <pre><code>line = "-" * 20  # Создаст строку "--------------------"</code></pre>
+      </section>
+    </section>
+
+    <section class="error-section">
+      <h2>📚 4. Преобразование типов</h2>
+      <section class="lesson-section">
+        <h3>⦁ Примеры:</h3>
+        <pre><code>number_str = "10"
+number_int = int(number_str)  # Преобразует строку в число (10)
+
+age = input("Сколько вам лет? ")  # Ввод всегда возвращает строку!
+age_int = int(age)  # Преобразование строки в целое число</code></pre>
+      </section>
+
+      <section class="lesson-section">
+        <h3>⦁ Опасные моменты:</h3>
+        <p>Ошибка при попытке преобразовать текст в число:<br>
+        <pre><code>int("десять")  # Вызовет ошибку ValueError!</code></pre></p>
+      </section>
+    </section>
+
+    <section class="prevention-section">
+      <h2>✏️ 🛠 Пример кода</h2>
+      <pre><code># Запрос двух чисел у пользователя
+num1 = int(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+
+# Вычисление суммы и произведения
+sum_result = num1 + num2
+product_result = num1 * num2
+
+#
+
+
+Вывод результатов
+print(f"Сумма: {sum_result}, Произведение: {product_result}")</code></pre>
+    </section>
+
+    <section class="prevention-section">
+      <h2>✏️ 📌 Проверь себя</h2>
+      <p>Задание: Напиши программу, которая:<br>
+      1. Запрашивает у пользователя его имя и возраст.<br>
+      2. Выводит сообщение:<br>
+        <code>"Привет, [имя]! Тебе уже [возраст] лет!"</code><br>
+        (Подсказка: не забудь преобразовать возраст в число).</p>
+      <p>Присылай в комментарии! (тг канала)</p>
+    </section>
+
+    <section class="prevention-section">
+      <h2>💡 Совет:</h2>
+      <p>Экспериментируйте с типами данных! Попробуйте сложить строку и число (получите ошибку), а затем исправьте её через преобразование типов.</p>
+    </section>
+  </div>
+
+
+  <div class="page-navigation">
+    <button id="prevPageButton"> ← </button>
+    <span id="pageNumber">1 из 10</span>
+    <button id="nextPageButton"> → </button>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const lessons = document.querySelectorAll('.lesson-content');
+  const prevButton = document.getElementById('prevPageButton');
+  const nextButton = document.getElementById('nextPageButton');
+  const pageNumberSpan = document.getElementById('pageNumber');
+  let currentPageIndex = 0;
+  const totalPages = lessons.length;
+
+  function updatePageDisplay() {
+    pageNumberSpan.textContent = `${currentPageIndex + 1} из ${totalPages}`;
+    lessons.forEach((lesson, index) => {
+      lesson.style.display = index=== currentPageIndex ? 'block' : 'none';
+    });
+    prevButton.disabled = currentPageIndex === 0;
+    nextButton.disabled = currentPageIndex === totalPages - 1;
+  }
+
+  prevButton.addEventListener('click', () => {
+    if (currentPageIndex > 0) {
+      currentPageIndex--;
+      updatePageDisplay();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentPageIndex < totalPages - 1) {
+      currentPageIndex++;
+      updatePageDisplay();
+    }
+  });
+
+  updatePageDisplay(); // Initial page load
+});
+</script>
+
+</body>
+</html>
