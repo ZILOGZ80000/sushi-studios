@@ -1,0 +1,5 @@
+name = "sushi-studios"
+compatibility_date = "2025-04-09"
+
+[assets]
+directory = "."  # Теперь Wrangler ищет файлы в корне проекта
