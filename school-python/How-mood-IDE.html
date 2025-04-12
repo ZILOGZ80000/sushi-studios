@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<title>Настройка IDE для Python</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px 15px 100px;
+        position: relative;
+    }
+    .back-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #00ff00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #000;
+        font-size: 24px;
+        z-index: 10;
+        transition: transform 0.3s;
+    }
+    h1 {
+        color: #00ff00;
+        text-align: center;
+        margin: 50px 0 30px;
+        font-size: 1.3em;
+    }
+    .content-section {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        padding: 0 15px;
+    }
+    .step {
+        margin-bottom: 25px;
+        padding: 15px;
+        border: 1px solid #00ff00;
+        border-radius: 8px;
+    }
+    code {
+        background: #1a1a1a;
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+    .back-btn:hover {
+  background-color: #00FF00;
+  transform: rotate(360deg);
+</style>
+
+<a href="/index.html" class="back-btn">←</a>
+<h1>Настройка IDE для Python</h1>
+
+<div class="content-section">
+    <div class="step">
+        <h2>1. Visual Studio Code</h2>
+        <p>1. Установите <a href="https://code.visualstudio.com/" style="color:#00ff00">VSCode</a> и <a href="https://www.python.org" style="color:#00ff00">python</a></p>
+        <p>2. Откройте расширения (Ctrl+Shift+X) → установите <b>Python</b> и <b>Pylance</b></p>
+        <p>3. Настройте интерпретатор: Ctrl+Shift+P → <code>Python: Select Interpreter</code></p>
+    </div>
+
+    <div class="step">
+        <h2>2. PyDroid3 (Android)</h2>
+        <p>1. Установите из <a href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3" style="color:#00ff00">Google Play</a></p>
+        <p>2. Откройте меню → <b>Интерпретатор</b> → выберите версию Python</p>
+        <p>3. Включите подсветку синтаксиса в настройках редактора</p>
+        <p>СОВЕТ: когда первый раз  запускаете программу он там опрос даст его вопросы можно скпнуть но в конце будут 3 галочки их лучше поставить</p>
+    </div>
+
+    <div class="step">
+        <h2>3. Pythonista (iOS)</h2>
+        <p>1. Скачайте из <a href="https://apps.apple.com/ru/app/pythonista-3/id1085978097" style="color:#00ff00">App Store</a></p>
+        <p>2. Создайте новый скрипт: "+" → <b>New Script</b></p>
+        <p>3. Для работы с библиотеками используйте встроенный менеджер пакетов</p>
+        <p>4. Настройте тему в <b>Settings → Editor Theme</b></p>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Уроки Python</title>
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            background-color: limegreen;
+            color: black;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 220px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #00FF00;
+            transform: scale(1.05);
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: limegreen;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #00FF00;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='/index.html'">←</button>
+
+
+
+    <div class="container">
+        <button class="button" onclick="window.location.href='lesson-0.html'">Подготовка</button>
+        <button class="button" onclick="window.location.href='lesson-1.html'">Основы</button>
+        <button class="button" onclick="window.location.href='lesson-2.html'">Средний</button>
+        <button class="button" onclick="window.location.href='lesson-3.html'">Полезные библиотеки</button>
+        <button class="button" onclick="window.location.href='lesson-4.html'">ТГ боты на аиограм</button>
+    </div>
+</body>
+</html>

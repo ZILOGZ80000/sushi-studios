@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>snake</title>
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Кнопка назад */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: limegreen;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #00FF00;
+            transform: rotate(360deg);
+        }
+
+        /* Основной контейнер */
+        .game-container {
+            text-align: center;
+            padding: 20px;
+            padding-top: 100px;
+        }
+
+        /* Иконка игры */
+        .game-icon {
+            width: 25vh;
+            height: 25vh;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px limegreen);
+        }
+
+        /* Название игры */
+        .game-title {
+            font-size: 2.5em;
+            margin: 0 0 40px 0;
+            text-shadow: 0 0 10px limegreen;
+        }
+
+        /* Ряд кнопок */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Кнопки */
+        .game-button {
+            padding: 15px 40px;
+            background-color: limegreen;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        .game-button:hover {
+            background-color: #00FF00;
+            transform: scale(1.05);
+        }
+
+        /* Описание */
+        .game-description {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid limegreen;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='/'">←</button>
+
+      <style>
+    /* CSS стили для уменьшения размера изображения */
+    .icon {
+        width: 360px;  /* Ширина изображения */
+        height: auto; /* Автоматический рассчет высоты */
+    }
+</style>
+
+<img src="icon4.jpg" alt="Иконка игры" class="icon">
+<!-- HTML-код с выравниванием надписи по центру вертикали -->
+<style>
+    /* CSS стили для центрирования текста вертикально внутри h1 */
+    .centered-text {
+        text-align: center; /* Выравнивание текста по центру горизонтали */
+        height: 70px; /* Высота блока */
+        line-height: 70px; /* Выравнивание текста по центру вертикали */
+    }
+</style>
+
+<h2 class="centered-text">змейка [V1.0]</h2>
+        <div class="button-row">
+            <a href="snake-online" class="game-button">ПОПРОБОВАТЬ</a>
+            <a href="" class="game-button">СКАЧАТЬ</a>
+        </div>
+
+        <div class="game-description">
+            самая обычная змейка
+        </div>
+    </div>
+</body>
+</html>

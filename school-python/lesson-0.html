@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подготовка к работе</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px 15px 100px;
+            position: relative;
+        }
+        .back-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #00ff00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            z-index: 10;
+        }
+        h1 {
+            color: #00ff00;
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 1.3em;
+        }
+        .content-text {
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            padding: 0 10px;
+        }
+        .settings-btn {
+            display: block;
+            width: 160px;
+            margin: 0 auto 30px;
+            padding: 8px;
+            background: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        .buttons-container button {
+            padding: 12px;
+            background: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 480px) {
+            .buttons-container {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+            button {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="back-btn" href="index.html">←</a>
+
+    <h1>=-=-=-= подготовка =-=-=-=</h1>
+
+    <div class="content-text">
+        <strong>Interpretation Python</strong> — интерпретатор Python на ПК<br><br>
+        <strong>VScode (пк)</strong> — мощное IDE для компьютера<br><br>
+        <strong>Pydroid3</strong> — профессиональное Android IDE<br><br>
+        <strong>Pythonista 3</strong> — интерпретатор для iOS
+    </div>
+
+    <button class="settings-btn" onclick="window.location.href='How-mood-IDE.html'">Как их настроить?</button>
+
+    <div class="buttons-container">
+        <button onclick="window.location.href='https://www.python.org'">Interpretator Python (ПК)</button>
+        <button onclick="window.location.href='https://code.visualstudio.com'">VSCode (ПК)</button>
+        <button onclick="window.location.href='https://play.google.com/store/apps/details?id=ru.iiec.pydroid3'">Pydroid3 (Android)</button>
+        <button onclick="window.location.href='https://apps.apple.com/us/app/pythonista-3/id1085978097'">Pythonista (iOS)</button>
+    </div>
+</body>
+</html>

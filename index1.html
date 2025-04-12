@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sushi Studios</title>
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .main-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 800px;
+        }
+
+        .main-button {
+            background: limegreen;
+            color: black;
+            padding: 2rem;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            width: 300px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .main-button:hover {
+            background: #00FF00;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .divider {
+            width: 80%;
+            height: 2px;
+            background: limegreen;
+            margin: 3rem auto;
+            opacity: 0.3;
+        }
+
+        .projects-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .category-switcher {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            background: none;
+            border: 2px solid limegreen;
+            color: limegreen;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: limegreen;
+            color: black;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .project-card {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid limegreen;
+            display: none; /* Скрываем все карточки по умолчанию */
+        }
+
+        .project-card.active {
+            display: block; /* Показываем активные */
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1 style="font-size: 3rem; margin: 0 0 2rem 0; text-shadow: 0 0 10px limegreen;">
+            🍣 SUSHI STUDIOS
+        </h1>
+
+        <div class="main-buttons">
+            <a href="/sushi-studios-blog" class="main-button">
+                <h2>📝 БЛОГ</h2>
+                <img src="blog-icon.png" alt="" width="100" style="margin-top: 1rem;">
+            </a>
+
+            <a href="/school-python" class="main-button">
+                <h2>🐍 УРОКИ PYTHON</h2>
+                <img src="python-icon.png" alt="" width="100" style="margin-top: 1rem;">
+            </a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="projects-section">
+        <h2>▰▰▰ PROJECTS ▰▰▰</h2>
+
+        <div class="category-switcher">
+            <button class="category-btn active" data-category="bots">Боты</button>
+            <button class="category-btn" data-category="games">Игры</button>
+            <button class="category-btn" data-category="programs">Программы</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Боты -->
+            <div class="project-card active" data-category="bots">                <h3>Telegram Бот</h3>
+                <p>🤖 Помощник для учета финансов</p>
+            </div>
+
+            <div class="project-card active" data-category="bots">
+                <h3>Discord Бот</h3>
+                <p>🎮 Игровой модератор</p>
+            </div>
+
+            <!-- Игры -->
+            <div class="project-card" data-category="games">
+                <h3>Космический шутер</h3>
+                <p>🚀 Уничтожай астероиды!</p>
+            </div>
+
+            <div class="project-card" data-category="games">
+                <h3>Платформер</h3>
+                <p>🏃♂️ Прыгай по платформам</p>
+            </div>
+
+            <!-- Программы -->
+            <div class="project-card" data-category="programs">
+                <h3>Календарь</h3>
+                <p>📅 Умное расписание</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Автоматическая настройка переключателя
+        document.addEventListener('DOMContentLoaded', function() {
+            // Находим все кнопки и карточки
+            const buttons = document.querySelectorAll('.category-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            // Функция переключения
+            function switchCategory(category) {
+                cards.forEach(card => {
+                    card.classList.remove('active');
+                    if(card.dataset.category === category) {
+                        card.classList.add('active');
+                    }
+                });
+            }
+
+            // Обработчик для кнопок
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Убираем активность у всех кнопок
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    // Делаем активной текущую
+                    button.classList.add('active');
+                    // Переключаем категорию
+                    switchCategory(button.dataset.category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
